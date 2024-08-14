@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 
 class ArticlesViewModel : BaseViewModel() {
     // privado es mutable
-    private val _articlesState: MutableStateFlow<ArticlesState> = MutableStateFlow(ArticlesState())
+    private val _articlesState: MutableStateFlow<ArticlesState> = MutableStateFlow(ArticlesState(loading = true))
 
     // publico inmutable
     val articlesState: StateFlow<ArticlesState> get() = _articlesState
@@ -23,4 +23,6 @@ class ArticlesViewModel : BaseViewModel() {
             _articlesState.emit(ArticlesState())
         }
     }
+
+
 }
