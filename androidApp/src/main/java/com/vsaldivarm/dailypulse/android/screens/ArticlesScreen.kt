@@ -29,18 +29,19 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.vsaldivarm.dailypulse.articles.Article
 import com.vsaldivarm.dailypulse.articles.ArticlesViewModel
 
 @Composable
 fun ArticlesScreen(
-    onAboutButtonClick: () -> Unit,
+    //onAboutButtonClick: () -> Unit,
     articlesViewModel: ArticlesViewModel,
 ) {
     val articlesState = articlesViewModel.articlesState.collectAsState()
 
     Column {
-        AppBar(onAboutButtonClick)
+        //AppBar(onAboutButtonClick)
 
         if (articlesState.value.loading)
             Loader()

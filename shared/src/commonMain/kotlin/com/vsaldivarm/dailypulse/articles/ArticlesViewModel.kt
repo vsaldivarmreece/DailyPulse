@@ -20,6 +20,8 @@ class ArticlesViewModel : BaseViewModel() {
     private fun getArticles() {
         scope.launch {
             delay(timeMillis = 500)
+            _articlesState.emit(ArticlesState(error= "Something went wrong"))
+            //val fetchedArticles = fe
             _articlesState.emit(ArticlesState())
         }
     }
